@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RentalcarsApplicationWithREST.iml" filepath="$PROJECT_DIR$/.idea/modules/RentalcarsApplicationWithREST.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RentalcarsApplicationWithREST_main.iml" filepath="$PROJECT_DIR$/.idea/modules/RentalcarsApplicationWithREST_main.iml" group="RentalcarsApplicationWithREST" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RentalcarsApplicationWithREST_test.iml" filepath="$PROJECT_DIR$/.idea/modules/RentalcarsApplicationWithREST_test.iml" group="RentalcarsApplicationWithREST" />
+    </modules>
+  </component>
+</project>
