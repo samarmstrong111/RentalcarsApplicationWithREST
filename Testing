@@ -1,0 +1,72 @@
+Initial testing: Grabbing the JSON file.
+Expected outcome: JSON file from the URL is found and converted into a JSON object.
+Outcome: Doesn't work, javax.json is not found. Apparently it's not a standard library.
+Fix: Downloaded and added to library. Also I forgot to specify to return a JSON object.
+
+Test: Print out the JSON file's entries one by one.
+Expected outcome: A series of Strings printed out.
+Outcome: It printed null instead. Tried a bunch of different libraries. Turns out I just wasn't iterating correctly.
+Fix: Extracted "Search" as a JsonObject. Then extracted "VehicleList" as a JsonArray. Now it's a List and so can be iterated over.
+
+Test: Print out in the format required.
+Expected outcome: Unsorted but the String values look about right.
+Outcome: Almost, had an extra "-" at the end.
+Fix: Returned substring without the last character instead.
+
+Test: Sort in terms of price.
+Expected outcome: Prints out them sorted in order of price.
+Outcome: Everything had been converted to an integer. Probably not a problem for this data, but would be if tested with similar prices.
+Fix: Made sure to extract it as a Double instead of integer. Also fixed it so the output was 1, 2, 3 instead of 0, 1, 2.
+
+All tests from here already iterates over everything since it's easier to spot an error if all are checked.
+
+Test: Correctly assign the right values for each SIPP letter
+Expected outcome: Each one should have the correct word(s) associated with the letter.
+Outcome: X values in second letter appear as invalid tag as per default, everything appears correct.
+EDIT: X value now equates to special in second letter also as I guess that makes more sense than three just being wrong.
+EDIT 2: Noticed that Fuel and Air-con are all in the same letter. Added in a function to split these up. Now it correctly outputs.
+
+Test: Check sorting by sipp works correctly.
+Expected outcome: Cars should be sorted in order of sipp. From CCAR to SDMR
+Outcome: Order is sorted correctly.
+
+Test: Printing out the highest rated supplier for each of the first letters in sipp works.
+Expected outcome: Seven cars with different ratings.
+Outcome: All cars outputted.
+Fix: Turns out I defined the previous car type variable inside the loop so it kept clearing. Moved that outside.
+
+Next outcome: Six with all the same rating.
+Fix: Turns out these six do all have the same rating as one highly rated company apparently makes one of every type.
+Should've checked that beforehand instead of assuming.
+Adding in CX as its own type "Compact special" seems to work. This should have its own test really on how I got it to check that.
+I had to switch from the previous type being the same as the currentto checking over a list of all of them.
+Thankfully this seventh CX type has a different supplier to those other six so at least they don't all show the same value.
+
+Test: Scores are calculated correctly from sipp.
+Expected outcome: 1st car gets a score of 3, 2nd car gets a score of 7, 10th car has score of 1.
+After that it should all work fine.
+Outcome: Score calculated correctly.
+
+Below are about the REST api. It got more patchy here as I was trying to wrap my head around how it works for a long time
+and by the time I managed to do that a lot of the functionality was already there and just needed things like output types
+and the functions changing to return List<String> instead of just printing.
+
+Test: Not exactly a test but a long time got spent on trying to find a way of using the REST api with a regular java file.
+Turns out that either it's just not possible to create a REST api outside of an IDE or it's obscenely complicated to figure out
+how due to the fact that there are no examples or anything.
+At this point I had to switch to an IDE, and chose Intellij because I used PyCharm a lot during my Python internship and this was
+created by the same people.
+
+Test: Is it possible to just attach REST to an existing project.
+Again this was a long series of trialing things that just didn't work.
+As it turns out, with Intellij at least, it's much easier to just make a new project and have REST from the start.
+Also, Intellij Community doesn't have the option for REST api, so I had to switch to Intellij Ultimate at this point.
+
+From here I followed a tutorial and more or less just copied that as a base into my main project. Moved the application start
+into Main and all of the actual stuff into SearchAndSortJSON to separate them.
+
+Test: Can I return the outputs through the api?
+Expected output: A series of String values.
+Output: Just errors. It needed to be returned as something.
+Fix: Return everything as List<String>. This is apparently fine to send out as JSON, and each entry in the list becomes its own
+thing in the output.
