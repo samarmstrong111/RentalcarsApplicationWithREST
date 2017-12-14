@@ -19,4 +19,6 @@ For the second part: "SIPP"
 For the third part: "CarTypeBySupplier"
 For the final part: "CarScore"
 
+This code must be ran inside of the environment currently, as .jar compilations don't seem to be correctly exported.
+
 If localhost:8080 doesn't work then you'll have to clear whatever is listening on the port first.
