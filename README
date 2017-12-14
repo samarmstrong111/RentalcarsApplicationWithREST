@@ -1,5 +1,5 @@
 To compile for the first time:
-When opening Intellij Ultimate, use the bottom choice "Check out from Version Control"
+When opening Intellij Ultimate, use the bottom choice "Check out from Version Control", you need Git installed.
 Select GitHub and enter the repository URL "https://github.com/samarmstrong111RentalcarsApplicationWithREST.git" and clone into your projects
 Once the project opens, press "alt+1" to open the project view
 Go into file->project setings and select your jdk
