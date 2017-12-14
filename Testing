@@ -65,7 +65,7 @@ Also, Intellij Community doesn't have the option for REST api, so I had to switc
 From here I followed a tutorial and more or less just copied that as a base into my main project. Moved the application start
 into Main and all of the actual stuff into SearchAndSortJSON to separate them.
 
-Test: Can I return the outputs through the api?
+Test: Can I return the outputs through the api.
 Expected output: A series of String values.
 Output: Just errors. It needed to be returned as something.
 Fix: Return everything as List<String>. This is apparently fine to send out as JSON, and each entry in the list becomes its own
