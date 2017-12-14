@@ -1,15 +1,22 @@
 To compile for the first time:
 When opening Intellij Ultimate, use the bottom choice "Check out from Version Control", you need Git installed.
-Select GitHub and enter the repository URL "https://github.com/samarmstrong111RentalcarsApplicationWithREST.git" and clone into your projects
-Once the project opens, press "alt+1" to open the project view
-Go into file->project setings and select your jdk
-Click the symbol in the very bottom left of the window to open up a bunch of other menus. On the right of the screen there will be a tab for "Gradle"
+Select GitHub and enter the repository URL "https://github.com/samarmstrong111/RentalcarsApplicationWithREST.git".
+Clone into your projects.
+Once the project opens, press "alt+1" to open the project view.
+Go into file->project setings and select your jdk.
+Click the symbol in the very bottom left of the window to open up a bunch of other menus.
+On the right of the screen there will be a tab for "Gradle"
 Click this and then the sync option.
-Finally, under libraries scroll until you find javax.json-1.0.4 and right click on it. Click "Load/Unload Modules" at the bottom
+Finally, under libraries scroll until you find javax.json-1.0.4 and right click on it.
+Click "Load/Unload Modules" at the bottom.
 Click load all and ok, then the program should compile.
+If javax.json doesn't appear in the libraries then go to file->project structure->libraries.
+Here, scroll down until you find the package. Right click it then Add to Modules and select all then it should compile.
 
 To view the output go to localhost:8080/ and then any of the following:
 For the first part: "Price"
 For the second part: "SIPP"
 For the third part: "CarTypeBySupplier"
 For the final part: "CarScore"
+
+If localhost:8080 doesn't work then you'll have to clear whatever is listening on the port first.
